@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+}
+
+header {
+    height: 80px;
+    padding: 0 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+header p {
+    margin: 4px 0 0;
+    color: #666;
+}
+
+#map {
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.legend i {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+.yellow {
+    background: #f1c40f;
+}
+
+.orange {
+    background: #e67e22;
+}
+
+.red {
+    background: #e74c3c;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+#map {
+    flex: 1;
+    height: 100%;
+}
+
+#report-panel {
+    width: 340px;
+    padding: 24px;
+    background: white;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+}
+
+#report-panel h2 {
+    margin-top: 0;
+}
+
+.instruction {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#report-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#report-form label {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#report-form input,
+#report-form select,
+#report-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#report-form textarea {
+    resize: vertical;
+}
+
+#report-form button {
+    margin-top: 20px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#report-form button:hover {
+    background: #444;
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+}

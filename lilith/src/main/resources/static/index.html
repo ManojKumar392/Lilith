@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lilith | Safety Map</title>
+
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="/css/map.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>Lilith</h1>
+        <p>Community Safety Map</p>
+    </div>
+
+    <div class="legend">
+        <span><i class="yellow"></i> Low concern</span>
+        <span><i class="orange"></i> Moderate Risk</span>
+        <span><i class="red"></i> High Risk</span>
+    </div>
+</header>
+
+<main>
+
+    <div id="map"></div>
+
+    <aside id="report-panel">
+
+        <h2>Report Location</h2>
+
+        <p class="instruction">
+            Click a location on the map to create a report.
+        </p>
+
+        <form id="report-form">
+
+            <label>Latitude</label>
+            <input
+                    type="text"
+                    id="latitude"
+                    readonly
+                    required
+            >
+
+            <label>Longitude</label>
+            <input
+                    type="text"
+                    id="longitude"
+                    readonly
+                    required
+            >
+
+            <label>Reason</label>
+            <select id="reason" required>
+                <option value="">Select reason</option>
+                <option value="POOR_LIGHTING">Poor Lighting</option>
+                <option value="HARASSMENT">Harassment</option>
+                <option value="THEFT">Theft</option>
+                <option value="ISOLATED_AREA">Isolated Area</option>
+                <option value="OTHER">Other</option>
+            </select>
+
+            <label>Severity</label>
+            <select id="severity" required>
+                <option value="">Select severity</option>
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+            </select>
+
+            <label>Description</label>
+            <textarea
+                    id="description"
+                    rows="4"
+                    placeholder="Describe what happened..."
+            ></textarea>
+
+            <button type="submit">
+                Submit Report
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </aside>
+
+</main>
+
+<script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script src="/js/map.js"></script>
+
+</body>
+</html>
