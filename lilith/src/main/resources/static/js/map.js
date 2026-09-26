@@ -1,5 +1,26 @@
+const currentUser =
+    JSON.parse(localStorage.getItem("lilithUser"));
+
+if (!currentUser) {
+    window.location.href = "/login.html";
+}
+
+let selectedSeverity = "ALL";
+
+document.getElementById("user-name").textContent =
+    currentUser.name;
+
+document
+    .getElementById("logout-button")
+    .addEventListener("click", function () {
+
+        localStorage.removeItem("lilithUser");
+
+        window.location.href = "/login.html";
+    });
+
 const map = L.map("map").setView(
-    [12.9716, 77.5946],
+    [20.2961, 85.8245],
     13
 );
 
@@ -63,6 +84,13 @@ async function loadAreas() {
         areaLayer.clearLayers();
 
         areas.forEach(area => {
+
+            if (
+                selectedSeverity !== "ALL" &&
+                area.severityLevel !== selectedSeverity
+            ) {
+                return;
+            }
 
             const bounds = [
                 [
@@ -193,7 +221,7 @@ document
         const report = {
 
             // Temporary until login is implemented
-            userId: 1,
+            userId: currentUser.id,
 
             latitude: parseFloat(latitude),
 
@@ -249,6 +277,30 @@ document
             message.textContent =
                 "Could not submit report.";
         }
+    });
+
+document
+    .querySelectorAll(".filter-button")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(".filter-button")
+                    .forEach(btn =>
+                        btn.classList.remove("active")
+                    );
+
+                this.classList.add("active");
+
+                selectedSeverity =
+                    this.dataset.level;
+
+                loadAreas();
+            }
+        );
     });
 
 

@@ -27,7 +27,51 @@
         <span><i class="orange"></i> Moderate Risk</span>
         <span><i class="red"></i> High Risk</span>
     </div>
+
+    <div class="user-section">
+
+        <a href="/dashboard.html">Insights</a>
+
+        <a href="/about.html">About</a>
+
+        <span id="user-name"></span>
+
+        <button id="logout-button">
+            Logout
+        </button>
+
+    </div>
 </header>
+
+<div class="map-toolbar">
+
+    <span>Show:</span>
+
+    <button
+            class="filter-button active"
+            data-level="ALL">
+        All
+    </button>
+
+    <button
+            class="filter-button"
+            data-level="YELLOW">
+        Yellow
+    </button>
+
+    <button
+            class="filter-button"
+            data-level="ORANGE">
+        Orange
+    </button>
+
+    <button
+            class="filter-button"
+            data-level="RED">
+        Red
+    </button>
+
+</div>
 
 <main>
 
@@ -81,6 +125,7 @@
             <textarea
                     id="description"
                     rows="4"
+                    maxlength="1000"
                     placeholder="Describe what happened..."
             ></textarea>
 

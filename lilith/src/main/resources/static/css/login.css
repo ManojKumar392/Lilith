@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    width: 400px;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.brand p {
+    color: #666;
+}
+
+.auth-card {
+    background: white;
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.tabs button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+    background: #eee;
+
+    cursor: pointer;
+}
+
+.tabs button.active {
+    background: #222;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    margin-top: 0;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    padding: 11px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button[type="submit"] {
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#auth-message {
+    margin-bottom: 0;
+    margin-top: 15px;
+
+    text-align: center;
+    font-size: 14px;
+}

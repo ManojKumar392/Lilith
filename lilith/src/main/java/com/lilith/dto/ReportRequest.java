@@ -2,18 +2,42 @@ package com.lilith.dto;
 
 import com.lilith.entity.Reason;
 import com.lilith.entity.Severity;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
 public class ReportRequest {
 
+    @NotNull(message = "User is required")
     private Long userId;
+
+    @NotNull(message = "Latitude is required")
+    @DecimalMin(value = "-90.0", message = "Invalid latitude")
+    @DecimalMax(value = "90.0", message = "Invalid latitude")
     private Double latitude;
+
+    @NotNull(message = "Longitude is required")
+    @DecimalMin(value = "-180.0", message = "Invalid longitude")
+    @DecimalMax(value = "180.0", message = "Invalid longitude")
     private Double longitude;
+
+    @NotNull(message = "Reason is required")
     private Reason reason;
+
+    @NotNull(message = "Severity is required")
     private Severity severity;
+
+    @Size(
+            max = 1000,
+            message = "Description cannot exceed 1000 characters"
+    )
     private String description;
+
     private LocalDateTime incidentTime;
+
 
     public Long getUserId() {
         return userId;

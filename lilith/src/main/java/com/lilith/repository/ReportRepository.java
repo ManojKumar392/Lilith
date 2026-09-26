@@ -10,4 +10,6 @@ public interface ReportRepository extends JpaRepository<Report, Long> {
     List<Report> findByAreaId(Long areaId);
 
     List<Report> findByUserId(Long userId);
+
+    List<Report> findTop5ByOrderByCreatedAtDesc();
 }

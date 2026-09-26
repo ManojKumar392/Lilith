@@ -3,6 +3,7 @@ package com.lilith.controller;
 import com.lilith.dto.ReportRequest;
 import com.lilith.entity.Report;
 import com.lilith.service.ReportService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class ReportController {
 
     @PostMapping
     public ResponseEntity<Report> createReport(
-            @RequestBody ReportRequest request) {
+            @Valid @RequestBody ReportRequest request) {
 
         return ResponseEntity.ok(
                 reportService.createReport(request)
